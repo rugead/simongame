@@ -1,0 +1,114 @@
+body {
+  background: white;
+  font-family: ubuntu;
+  color: tomato;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.content {
+	display: flex;
+  flex-direction: column;;
+  margin: 2vh 2vw 0 2vw;
+  flex-wrap: wrap;
+  justify-content: space-between;;
+  align-items: stretch;;
+  align-content: center;
+}
+
+.header, h1 {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.column {
+	display: flex;
+  flex: 1 0 auto;
+	flex-direction: column;
+	/*justify-content: center;*/
+}
+
+.footer {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.footer .ubuntu {
+  font-family: ubuntu;
+  font-size: 0.75em;
+}
+
+.buzzer {
+  cursor: pointer;
+  border:5px solid;
+  border-radius: 30px;
+  /*border-color: orange;*/
+  width: 50px;
+  height: 50px;
+  /*background-color: red;*/
+}
+
+.start-button {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.btn {
+  flex: 1;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+  color: tomato;
+  /*font-size: 1em;*/
+  font-weight: 600;;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  cursor: pointer;
+  background: #ccc;
+  box-shadow:         1px 4px 6px rgba(50, 50, 50, 0.75);
+}
+.btn:active {
+  background-color: tomato;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  color: #ccc;
+}
+
+.xxx {
+  display: flex;
+}
+
+/* Tabletts */
+@media only screen and (min-width: 760px) {
+	/*.content { max-width: 760px }*/
+  .content {
+  	width: 80vw;
+  	margin: 2vh 10vw 0 10vw;
+  }
+
+}
+
+/* Mittlere Monitore */
+@media only screen and (min-width: 980px) {
+	/*.content { max-width: 980px }*/
+  .content {
+  	width: 60vw;
+  	margin: 2vh 20vw 0 20vw;
+  }
+
+}
+
+/* Große Monitore */
+@media only screen and (min-width: 1280px) {
+  .content {
+  	width: 40vw;
+  	margin: 2vh 30vw 0 30vw;
+  }
+
+}
