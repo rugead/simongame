@@ -1,11 +1,7 @@
-'use strict';
-// const xxx = require('./tictactoe.js');
-// xxx('12');
-//
-let timeoutID;
 const buzzerList = ['red', 'green', 'yellow', 'blue'];
 const app = document.querySelector('#app');
 // let randomMusic = Math.floor(Math.random() * 4);
+let timeoutID = '';
 const createBuzzer = buzzerList.map(function (item) {
     let buzzer = document.createElement('DIV');
     buzzer.setAttribute('id', item);
@@ -66,10 +62,10 @@ let playSound = function () {
 let playRandomSoundArray = (x) => {
 if (x < 0 ) { return; }
 let y = randomSoundArray[0];
-console.log('Y', y);
-play_single_sound(y);
-x = x - 1;
-timeoutID = setTimeout(function () { playRandomSoundArray(x); }, 1000);
+  console.log('Y', y);
+  play_single_sound(y);
+  x = x - 1;
+  timeoutID = setTimeout(function () { playRandomSoundArray(x); }, 1000);
 };
 
 runRandomSoundArray.addEventListener('click', function () { randomSoundArrayLength(); }, false);
