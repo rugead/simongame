@@ -22,6 +22,8 @@
     "gulp-clean-css": "^3.0.0",
     "gulp-gh-pages": "^0.5.4",
     "gulp-util": "^3.0.7",
+    "pug-lint": "^2.4.0",
+    "pug-lint-config-clock": "^2.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   },

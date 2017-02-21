@@ -10,22 +10,21 @@ html
     link(rel='stylesheet', href='./css/app.css', type='text/css')
   body
     div.content
+
       audio#redaudio(src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" preload="auto")
       audio#greenaudio(src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" preload="auto")
       audio#blueaudio(src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" preload="auto")
       audio#yellowaudio(src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" preload="auto")
-
-
-
-
 
       div.header simon
         h1
           a(href='simon.html') simon
         h1
           a(href='tictactoe.html') tictactoe
-      div.column
-        section#app
+      div.column#app
+        section#buttons
+
+        section#controls
 
 
       div.footer

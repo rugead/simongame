@@ -45,20 +45,56 @@ section {
 
 .buzzer {
   cursor: pointer;
-  border:5px solid;
-  border-radius: 30px;
+  border: 5px solid;
+  border-radius: 20px;
   /*border-color: orange;*/
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
+  flex: 0 1 46%;
+  align-self: stretch;
   /*background-color: red;*/
 }
 
-.start-button {
-  cursor: pointer;
-  background-color: #eee;
+.buzzer:active {
+  background-color: #ccc;
+
 }
 
+
+#controls {
+  display: flex;
+
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: stretch;
+
+}
+.reset-button {
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 30px;
+  width: 50px;
+  text-align: center;
+}
+.run-button {
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 30px;
+    width: 50px;
+    text-align: center;
+
+}
+.disable {
+  background-color: red;
+}
 .btn {
+
   flex: 1;
   text-align: center;
   margin-top: 1em;
