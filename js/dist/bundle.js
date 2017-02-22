@@ -82,7 +82,7 @@ function playRandomSoundArray(randomSoundArrayLength = (randomSoundArray.length)
     randomSoundArrayLength = randomSoundArrayLength - 1;
     timeoutIDIgnore = setTimeout(function () {
         playRandomSoundArray(randomSoundArrayLength);
-    }, 333);
+    }, 700);
 };
 
 let victory = () => {
