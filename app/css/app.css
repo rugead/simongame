@@ -1,23 +1,38 @@
 body {
   background: white;
   font-family: ubuntu;
-  color: tomato;
+  color: royalblue;
 }
 
 section {
   display: flex;
-  justify-content: space-around;
-  align-content: stretch;
-  align-items: stretch;
 }
 
+.red {
+  background-color: crimson;
+}
+
+.blue {
+  background-color: royalblue;
+}
+
+.green {
+  background-color: mediumseagreen;
+}
+
+.yellow {
+  background-color: gold;
+}
+
+.highlight {
+  display: none;
+}
 .content {
 	display: flex;
   flex-direction: column;;
   margin: 2vh 2vw 0 2vw;
   flex-wrap: wrap;
   justify-content: space-between;;
-  align-items: stretch;;
   align-content: center;
 }
 
@@ -27,10 +42,12 @@ section {
 }
 
 .column {
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 100px;
 	display: flex;
   flex: 1 0 auto;
 	flex-direction: column;
-	/*justify-content: center;*/
 }
 
 .footer {
@@ -43,77 +60,68 @@ section {
   font-size: 0.75em;
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .buzzer {
+  margin:3px;
   cursor: pointer;
-  border: 5px solid;
-  border-radius: 20px;
-  /*border-color: orange;*/
+  border-radius: 100px;
   width: 100px;
   height: 100px;
-  flex: 0 1 46%;
-  align-self: stretch;
-  /*background-color: red;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 4px 6px rgba(50, 50, 50, 0.75);
 }
 
 .buzzer:active {
   background-color: #ccc;
-
-}
-
-
-#controls {
-  display: flex;
-
-}
-
-#buttons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  align-content: stretch;
-
-}
-.reset-button {
-  cursor: pointer;
-  background-color: #ccc;
-  border-radius: 30px;
-  width: 50px;
-  text-align: center;
-}
-.run-button {
-    cursor: pointer;
-    background-color: #ccc;
-    border-radius: 30px;
-    width: 50px;
-    text-align: center;
-
-}
-.disable {
-  background-color: red;
-}
-.btn {
-
-  flex: 1;
-  text-align: center;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  cursor: pointer;
-  color: tomato;
-  /*font-size: 1em;*/
-  font-weight: 600;;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  cursor: pointer;
-  background: #ccc;
-  box-shadow:         1px 4px 6px rgba(50, 50, 50, 0.75);
-}
-.btn:active {
-  background-color: tomato;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
   color: #ccc;
+}
+
+.reset-button {
+  background-color: #ccc;
+}
+
+.run-button {
+    background-color: #ccc;
+}
+
+.message {
+  margin:3px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.hide {
+  display: none;
+}
+
+.counter {
+  display: none;
+  cursor: default;
+  background-color: #ccc;
+  border-style: solid;
+  /*color: #fff;*/
+  margin:3px;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .xxx {

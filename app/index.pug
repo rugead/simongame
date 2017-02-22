@@ -5,24 +5,43 @@ html
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel="apple-touch-icon" href="./../img/apple-touch-icon.png")
+    link(rel="shortcut icon" href="./../img/favicon.ico")
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css', type='text/css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Ubuntu')
     link(rel='stylesheet', href='./css/app.css', type='text/css')
+
   body
     div.content
-      div.header index
-        h1
-          a(href='simon.html') simon
-        h1
-          a(href='tictactoe.html') tictactoe
-      div.column
-        section
+      audio#red(src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" preload="auto")
+      audio#green(src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" preload="auto")
+      audio#blue(src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" preload="auto")
+      audio#yellow(src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" preload="auto")
 
+      div.header
+        h1 simon
+
+      div.column#app
+        //- section.button#message
+
+        section.button.row1
+            div.message#mOne.hide äää
+            div.red.buzzer.btn#red
+            div.blue.buzzer.btn#blue
+
+        section.button.row2
+            div.message#mTwo.hide äää
+            div.green.buzzer.btn#green
+            div.yellow.buzzer.btn#yellow
+
+        section.button
+          div.reset-button.buzzer.btn#reset-button reset
+          div.run-button.buzzer.btn#run-button run
+          div.counter.btn#counter run
 
       div.footer
         i.fa.fa-copyright(aria-hidden="true")
           span.ubuntu 2017 by Rudolf Vogel - An der Fleschermühle 14 - 87509 Immenstadt - rugead@gmail.com
-
-
 
   script(type="text/javascript", src="js/dist/bundle.js")
