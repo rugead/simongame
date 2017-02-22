@@ -1,60 +1,44 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict';
+const listen = require('good-listener');
+const audioArray = ['red', 'blue', 'green', 'yellow'];
+const buttons = document.querySelector('#buttons');
+const controls = document.querySelector('#controls');
 
-var listen = require('good-listener');
-var audioArray = ['red', 'blue', 'green', 'yellow'];
-var buttons = document.querySelector('#buttons');
-var controls = document.querySelector('#controls');
-
-var playSingleSound = function playSingleSound(id) {
-    var classId = 'div.' + id;
+const playSingleSound = (id) => {
+    let classId = 'div.' + id;
     document.getElementById(id).play();
     document.querySelector(classId).style.backgroundColor = '#ccc';
     setTimeout(function () {
         document.querySelector(classId).style.backgroundColor = '';
     }, 500);
-};
+}
 
-document.querySelector('#run-button').addEventListener('click', function () {
-    return playRandomSoundArray();
-}, false);
-document.querySelector('#reset-button').addEventListener('click', function () {
-    return reset();
-}, false);
+document.querySelector('#run-button').addEventListener('click', () => playRandomSoundArray(), false);
+document.querySelector('#reset-button').addEventListener('click', () => reset(), false);
 
-document.querySelector('div.red').addEventListener('click', function () {
-    return hhh('red');
-});
-document.querySelector('div.blue').addEventListener('click', function () {
-    return hhh('blue');
-});
-document.querySelector('div.green').addEventListener('click', function () {
-    return hhh('green');
-});
-document.querySelector('div.yellow').addEventListener('click', function () {
-    return hhh('yellow');
-});
+document.querySelector('div.red').addEventListener('click', () => hhh('red'));
+document.querySelector('div.blue').addEventListener('click', () => hhh('blue'));
+document.querySelector('div.green').addEventListener('click', () => hhh('green'));
+document.querySelector('div.yellow').addEventListener('click', () => hhh('yellow'));
 
-var timeoutIDIgnore = void 0;
-var randomSoundArray = [];
-var playedSoundArray = [];
-var randomSoundArrayCounter = 0;
+let timeoutIDIgnore;
+let randomSoundArray = [];
+let playedSoundArray = [];
+let randomSoundArrayCounter = 0;
 
-var hhh = function hhh(sound) {
+let hhh = (sound) => {
     playedSoundArray.push(sound);
     if (playedSoundArray.length === 20) {
         playSingleSound(sound);
         victory();
-        return;
+        return
     }
 
-    var uuu = playedSoundArray.length - 1;
-    var ppp = randomSoundArray.length - 1;
-    if (playedSoundArray.indexOf(sound, uuu) === randomSoundArray.indexOf(sound, uuu) && uuu === ppp) {
+    let uuu = playedSoundArray.length - 1;
+    let ppp = randomSoundArray.length - 1;
+    if (playedSoundArray.indexOf(sound, uuu) === randomSoundArray.indexOf(sound, uuu) && (uuu === ppp)) {
         playSingleSound(sound);
-        setTimeout(function () {
-            return playRandomSoundArray();
-        }, 1500);
+        setTimeout(() => playRandomSoundArray(), 1500);
     } else if (playedSoundArray.indexOf(sound, uuu) === randomSoundArray.indexOf(sound, uuu)) {
         playSingleSound(sound);
     } else {
@@ -66,21 +50,20 @@ var hhh = function hhh(sound) {
         document.querySelector('div.green').classList.add('hide');
         document.querySelector('#mOne').innerHTML = 'You should have pushed: ' + randomSoundArray[uuu];
         document.querySelector('#mTwo').innerHTML = 'You pushed: ' + playedSoundArray[uuu];
+
     }
 };
 
-var picRandomSound = function picRandomSound() {
-    var r = Math.floor(Math.random() * 4);
-    var s = audioArray[r];
+let picRandomSound = function () {
+    let r = Math.floor(Math.random() * 4);
+    let s = audioArray[r];
     randomSoundArray.push(s);
     playSingleSound(s);
 };
 
-var counter = randomSoundArray.length;
+let counter = randomSoundArray.length;
 
-function playRandomSoundArray() {
-    var randomSoundArrayLength = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : randomSoundArray.length;
-
+function playRandomSoundArray(randomSoundArrayLength = (randomSoundArray.length)) {
     document.querySelector('#run-button').style.display = 'none';
     document.querySelector('#counter').style.display = 'flex';
 
@@ -102,7 +85,7 @@ function playRandomSoundArray() {
     }, 400);
 };
 
-var victory = function victory() {
+let victory = () => {
     document.querySelector('#mOne').classList.remove('hide');
     document.querySelector('#mTwo').classList.remove('hide');
     document.querySelector('div.red').classList.add('hide');
@@ -117,20 +100,18 @@ var victory = function victory() {
     // randomSoundArrayCounter = 0;
     // playedSoundArray = [];
     // counter = randomSoundArray.length;
-    setTimeout(function () {
-        return reset();
-    }, 3000);
-};
+    setTimeout(() => reset(), 3000);
+}
 
-var reset = function reset() {
+let reset = () => {
     document.querySelector('#mOne').classList.add('hide');
     document.querySelector('#mTwo').classList.add('hide');
     document.querySelector('div.red').classList.remove('hide');
     document.querySelector('div.blue').classList.remove('hide');
     document.querySelector('div.yellow').classList.remove('hide');
     document.querySelector('div.green').classList.remove('hide');
-    document.querySelector('#run-button').style.display = 'flex';
-    document.querySelector('#counter').style.display = 'none';
+    document.querySelector('#run-button').style.display = 'flex'
+    document.querySelector('#counter').style.display = 'none'
     randomSoundArray = [];
     randomSoundArrayCounter = 0;
     playedSoundArray = [];
@@ -363,5 +344,4 @@ function listenSelector(selector, type, callback) {
 
 module.exports = listen;
 
-},{"./is":4,"delegate":3}]},{},[1])
-//# sourceMappingURL=app.js.map
+},{"./is":4,"delegate":3}]},{},[1]);
